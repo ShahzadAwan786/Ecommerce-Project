@@ -56,7 +56,7 @@ const UpdateCard = ({ product, onSave, onCancel }) => {
     return (
 
         <div className="fixed inset-0 flex items-center justify-center z-50 backdrop-brightness-20">
-            <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-[53%] max-h-[95%] border border-gray-200 ">
+            <div className="bg-white p-6 rounded-lg shadow-lg h-fit w-fit border border-gray-200 ">
                 <div className="flex justify-between">
                     <h1 className="text-lg font-bold mb-4">Edit Product</h1>
                     <IoMdClose className="cursor-pointer" onClick={onCancel} />
@@ -90,8 +90,8 @@ const UpdateCard = ({ product, onSave, onCancel }) => {
                                 onChange={handleChange}
                                 className="shadow appearance-none border rounded w-75 py-2 px-3 text-gray-700 leading-tight
                               focus:outline-blue-700 focus:outline-2 focus:outline-offset-2 focus:outline-solid"
-                                required
-                            />
+                           required
+                           />
                         </div>
 
                     </div>
@@ -123,8 +123,8 @@ const UpdateCard = ({ product, onSave, onCancel }) => {
                                 onChange={handleChange}
                                 className="shadow appearance-none border rounded w-75 py-2 px-3 text-gray-700
                                  leading-tight focus:outline-blue-700 focus:outline-2 focus:outline-offset-2 focus:outline-solid"
-                                required
-                            />
+                           required
+                           />
                         </div>
                         <div className="mb-4">
                             <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="price">
@@ -138,8 +138,8 @@ const UpdateCard = ({ product, onSave, onCancel }) => {
                                 onChange={handleChange}
                                 className="shadow appearance-none border rounded w-75 py-2 px-3 text-gray-700 leading-tight
                                 focus:outline-blue-700 focus:outline-2 focus:outline-offset-2 focus:outline-solid"
-                                required
-                            />
+                           required
+                           />
                         </div>
                     </div>
                     <div className="mb-7">
@@ -154,7 +154,7 @@ const UpdateCard = ({ product, onSave, onCancel }) => {
                             onChange={handleChange}
                             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight 
                             focus:outline-blue-700 focus:outline-2 focus:outline-offset-2 focus:outline-solid"
-                            required
+                        required
                         />
                     </div>
                     <div className="flex justify-end">
@@ -222,7 +222,7 @@ const Cards = ({ product, onDelete, onUpdate }) => {
                     />
                 )}
                 <main className='flex-1'>
-                    <div className='card group md:h-107 md:w-56 w-90 h-135 bg-[#ffffff] rounded-2xl border-1 hover:shadow-md transition-shadow border-[#dedede]'>
+                    <div className='card group md:h-107 md:w-56 w-90 h-120 bg-[#ffffff] rounded-2xl border-1 hover:shadow-md transition-shadow border-[#dedede]'>
                         <div className='flex relative bg-gray-100 group-hover:bg-gray-300 md:h-58 md:w-full w-full h-70 rounded-t-2xl'>
                             <img
                                 src={product.images?.[0] || '/bed.png'}
@@ -242,16 +242,16 @@ const Cards = ({ product, onDelete, onUpdate }) => {
                             <span className='text-2xl font-bold text-blue-600 px-4'>${product.price}</span>
                             <span className='px-4 text-[14px] text-gray-500'>Stock: {product.stock}</span>
                         </div>
-                        <div className='flex justify-center items-center gap-3 py-3'>
+                        <div className='flex justify-center items-center gap-3 md:py-3 py-2'>
                             <button
                                 onClick={handleEdit}
-                                className='border-1 border-[#dedede] text-sm font-semibold flex justify-between items-center gap-2 px-4 py-2 rounded-lg cursor-pointer hover:bg-gray-100'
+                                className='border-1 border-[#dedede] md:text-sm text-lg font-semibold flex justify-between items-center gap-2 px-4 py-2 rounded-lg cursor-pointer hover:bg-gray-100'
                             >
                                 <BiSolidEdit /> Edit
                             </button>
                             <button
                                 onClick={handleDelete}
-                                className='border-1 border-[#dedede] text-sm font-semibold flex justify-between items-center gap-2 px-5 py-2 rounded-lg cursor-pointer hover:bg-red-500 hover:text-white text-red-500'
+                                className='border-1 border-[#dedede] md:text-sm text-lg font-semibold flex justify-between items-center gap-2 px-5 py-2 rounded-lg cursor-pointer hover:bg-red-500 hover:text-white text-red-500'
                             >
                                 <RiDeleteBin6Line /> Delete
                             </button>

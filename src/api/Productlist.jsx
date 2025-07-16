@@ -62,7 +62,7 @@ const Productlist = () => {
                 body: JSON.stringify(productData)
             })
             const data = await res.json();
-            setProducts(prev=> ([...data, ...prev]) )
+            setProducts(prev=> ([data, ...prev]) )
     } catch (error) {
             console.log(`Failed to add Product:`, error)
         }

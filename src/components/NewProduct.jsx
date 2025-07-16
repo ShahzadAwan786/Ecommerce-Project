@@ -6,18 +6,19 @@ import { IoMdClose } from "react-icons/io";
 
 const AddProduct = ({ product, onCancel, onSave }) => {
 
-   const [formData, setFormData] = useState({
-    title: product?.title || '',
-    price: product?.price || '',
-    description: product?.description || '',
-    category: product?.category || '',
-    stock: product?.stock || '',
-    image: product?.images?.[0] || ''
+  const [formData, setFormData] = useState({
+    title: product.title,
+    price: product.price,
+    description: product.description,
+    category: product.category,
+    stock: product.stock,
+    image: product.images?.[0]
   });
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(
-     { [name]: value}
+    setFormData( pre => ({
+      ...pre,[name]:value
+    })
     );
   }
 
@@ -26,9 +27,9 @@ const AddProduct = ({ product, onCancel, onSave }) => {
     onSave(formData)
   }
   return (
-    <div className="fixed inset-0 flex items-center justify-center z-50 backdrop-brightness-20">
-      <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-[53%] max-h-[95%] border border-gray-200 ">
-        <div className="flex  justify-between">
+    <div className="fixed inset-0 h-fit w-fit translate-x-[5%] md:translate-x-[43%] md:top-[30%] top-[200%] z-50 backdrop-brightness-20">
+      <div className="bg-white p-6 rounded-lg shadow-lg w-full border border-gray-200 ">
+        <div className="flex justify-between">
           <h1 className="text-lg font-bold mb-4">Add Product</h1>
           <IoMdClose className="cursor-pointer" onClick={onCancel} />
         </div>
@@ -46,7 +47,7 @@ const AddProduct = ({ product, onCancel, onSave }) => {
                 onChange={handleChange}
                 className="shadow appearance-none border rounded w-75 py-2 px-3 text-gray-700 leading-tight
                  focus:outline-blue-700 focus:outline-2 focus:outline-offset-2 focus:outline-solid"
-              required
+                required
               />
             </div>
             <div className="mb-4">
@@ -61,7 +62,7 @@ const AddProduct = ({ product, onCancel, onSave }) => {
                 onChange={handleChange}
                 className="shadow appearance-none border rounded w-75 py-2 px-3 text-gray-700 leading-tight
                 focus:outline-blue-700 focus:outline-2 focus:outline-offset-2 focus:outline-solid"
-              required
+                required
               />
             </div>
 
@@ -94,8 +95,8 @@ const AddProduct = ({ product, onCancel, onSave }) => {
                 onChange={handleChange}
                 className="shadow appearance-none border rounded w-75 py-2 px-3 text-gray-700
                 leading-tight focus:outline-blue-700 focus:outline-2 focus:outline-offset-2 focus:outline-solid"
-             required
-             />
+                required
+              />
             </div>
             <div className="mb-4">
               <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="price">
@@ -109,7 +110,7 @@ const AddProduct = ({ product, onCancel, onSave }) => {
                 onChange={handleChange}
                 className="shadow appearance-none border rounded w-75 py-2 px-3 text-gray-700 leading-tight
                 focus:outline-blue-700 focus:outline-2 focus:outline-offset-2 focus:outline-solid"
-              required
+                required
               />
             </div>
           </div>
@@ -125,8 +126,8 @@ const AddProduct = ({ product, onCancel, onSave }) => {
               onChange={handleChange}
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight 
                focus:outline-blue-700 focus:outline-2 focus:outline-offset-2 focus:outline-solid"
-          required
-          />
+              required
+            />
           </div>
           <div className="flex justify-end">
 
@@ -162,9 +163,9 @@ const NewProduct = ({ onAddProduct }) => {
 
   return (
     <>
-      <div >
+      <div className='flex absolute'>
         {addProduct && <AddProduct
-        product={{}}
+          product={{}}
           onSave={handleSave}
           onCancel={handleCancle} />}
       </div>
