@@ -10,7 +10,7 @@ const Productlist = () => {
 
   const [loading, setLoading] = useState(false);
   const [pagination, setPagination] = useState({ skip: 0, limit: 12, total: 0 });
-  console.log(pagination);
+
 
   const API_URL = "https://dummyjson.com/products";
   useEffect(() => {

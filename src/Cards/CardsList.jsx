@@ -8,7 +8,7 @@ const CardsList = ({ products, onDelete, onUpdate, onFilter,  onPagination }) =>
   const handlenext = () => {
    onFilter((prev) => ({ ...prev, skip: prev.skip + prev.limit }))
   };
-  console.log(handlenext);
+ 
   const handlepre = () => {
     onFilter((prev) => ({...prev, skip: prev.skip - prev.limit}))
   };
