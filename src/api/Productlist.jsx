@@ -15,7 +15,7 @@ const Productlist = () => {
   const API_URL = "https://dummyjson.com/products";
   useEffect(() => {
     fetchProducts();
-  }, [pagination.skip, pagination.skip]);
+  }, [pagination.skip, pagination.limit]);
 
   const fetchProducts = async () => {
     try {
