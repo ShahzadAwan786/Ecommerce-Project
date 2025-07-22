@@ -27,7 +27,7 @@ const Productlist = () => {
       setProducts(data?.products);
       setPagination((prev) => ({
         ...prev,
-        total: data.total, // This is crucial for pagination
+        total: data.total, 
       }));
     } catch (error) {
       console.log("Failed to fetch product:", error);
