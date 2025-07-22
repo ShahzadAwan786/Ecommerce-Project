@@ -54,7 +54,7 @@ const CardsList = ({ products, onDelete, onUpdate, onFilter,  onPagination }) =>
             }`}
             
           >
-            Previews
+            Preview
           </button>
           <button
             onClick={handlenext}
