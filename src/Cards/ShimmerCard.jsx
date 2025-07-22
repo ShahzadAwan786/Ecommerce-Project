@@ -10,7 +10,7 @@ export const ShimmerCard = () => {
             </aside>
           
             <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4'>
-                 { Array.from({length:60}).map((_,i)=>(
+                 { Array.from({length:12}).map((_,i)=>(
                 <main className='flex-1'>
                   
                                <div key={i} className='card group md:h-90 md:w-56 w-90 h-135 bg-[#ffffff] dark:bg-[#282828] rounded-2xl border-1 hover:shadow-md transition-shadow border-[#dedede]'>

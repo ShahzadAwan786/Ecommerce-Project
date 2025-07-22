@@ -278,7 +278,7 @@ const Cards = ({ product, onDelete, onUpdate }) => {
               <span className="text-2xl font-bold text-blue-600 px-4">
                 ${product.price}
               </span>
-              <span className="px-4 text-[14px] text-gray-500 dark:text-gray-300">
+              <span className="px-4 text-[14px] max-h-5 text-gray-500 dark:text-gray-300">
                 Stock: {product.stock}
               </span>
             </div>
